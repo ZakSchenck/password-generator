@@ -80,11 +80,13 @@ function generate() {
 // Event listener button
 button.addEventListener('click', function () {
     // numbers 3-20 validation check
+    let lengthAlert = document.getElementById('pw-length');
     if (slider.value < 3 || slider.value > 20) {
-        alert('Your password length must be between 3 and 20!');
+        lengthAlert.style.display = "block";
     }
     else {
-        generate()
+        generate();
+        lengthAlert.style.display = "none";
     }
     password = ''
 })

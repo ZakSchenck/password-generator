@@ -16,7 +16,8 @@
     <h2>Password Generator</h2>
     <hr id="hr">
     <label for="myRange">Enter Password Length</label>
-    <input type="number" value="4" id="myRange" min="3" max="20" onkeypress="return isNumber(event)">
+    <p id="pw-length">Password length must be between 3 and 20.</p>
+    <input type="number" value="4" id="myRange" min="3" max="20" maxlength="2" size="2" onkeypress="return isNumber(event)">
     <div class="checkbox-container">
         <div class="checkbox-flex">
             <input type="checkbox" id="uppercase" name="uppercase">
