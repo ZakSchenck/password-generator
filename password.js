@@ -4,6 +4,16 @@ let lowercaseCheckbox = document.getElementById('lowercase');
 let uppercaseCheckbox = document.getElementById('uppercase');
 const button = document.getElementById('b');
 
+// making it so you can only type numbers in the input field
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+
 // Function for all the checkbox logic
 function generate() {
     let passwordLength;
@@ -69,6 +79,12 @@ function generate() {
 
 // Event listener button
 button.addEventListener('click', function () {
-    generate()
+    // numbers 3-20 validation check
+    if (slider.value < 3 || slider.value > 20) {
+        alert('Your password length must be between 3 and 20!');
+    }
+    else {
+        generate()
+    }
     password = ''
 })
